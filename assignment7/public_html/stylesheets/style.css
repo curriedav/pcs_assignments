@@ -50,6 +50,9 @@
 }
 
 /* Post container styles */
+.blog-container {
+  background: blue;
+}
 
 #post-box {
   background: blue;
