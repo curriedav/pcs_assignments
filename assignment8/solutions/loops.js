@@ -25,18 +25,33 @@ module.exports.factorial = function factorial (num) {
 module.exports.capitalizeEveryOther = function capitalizeEveryOther (str) {
 
   var splitStr = str.split("");
-  var capStr = "";
+  var re = /[A-Z]|[a-z]/;
+  var alternStr = "";
 
   for (var i = 0; i <= splitStr.length - 1; i++) {
-  	
-  	if (splitStr[i] = /*IS A LETTER*/) {
 
+  	if (re.test(splitStr[i])) {
+
+      if (re.test(splitStr[i-1]) && splitStr[i-1] !== undefined) {
+
+        if (splitStr[i-1] === splitStr[i-1].toUpperCase()) {
+        
+          alternStr += splitStr[i].toLowerCase();
+        } else {
+
+         alternStr += splitStr[i].toUpperCase();
+        }
+      } else {
+
+        alternStr += splitStr[i].toLowerCase();
+      }
   	} else {
-
-  	}
+      
+      alternStr += splitStr[i];
+    }
   };
 
-  return null;
+  return alternStr;
 }
 
 module.exports.capitalizeVowels = function capitalizeVowels (str) {
