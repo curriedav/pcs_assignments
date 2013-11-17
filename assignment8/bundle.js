@@ -1618,15 +1618,18 @@ module.exports.capitalizeVowels = function capitalizeVowels (str) {
 
 
 module.exports.isPalindrome = function isPalindrome (str) {
-  var halfLength = str.length / 2;
-
-  if (str.length % 2 === 0) {
-    return str.slice(0, halfLength - 1) === str.slice(halfLength, str.length - 1);
-
+  if (str === "") {
+    return str;
   } else {
-    return str.slice(0, Math.floor(halfLength) - 1) === str.slice(Math.floor(halfLength) + 1, str.length - 1);
-  }
+    var halfLength = str.length / 2;
 
+    if (str.length % 2 === 0) {
+      return str.slice(0, halfLength - 1) === str.split("").reverse().join("").slice(0, halfLength - 1);
+
+    } else {
+      return str.slice(0, Math.floor(halfLength) - 1) === str.split("").reverse().join("").slice(0, Math.floor(halfLength) - 1);
+    }
+  }
 }
 
 },{}],14:[function(require,module,exports){
