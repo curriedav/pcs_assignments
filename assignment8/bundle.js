@@ -1522,7 +1522,7 @@ function isEven (num) {
 
 function isBeep (str) {
 
-	if (str = "beep") {
+	if (str === "beep") {
 		return true;
 	} else {
 		return false;
@@ -1618,10 +1618,14 @@ module.exports.capitalizeVowels = function capitalizeVowels (str) {
 
 
 module.exports.isPalindrome = function isPalindrome (str) {
+  var halfLength = str.length / 2;
 
-  // implement me!
+  if (str.length % 2 === 0) {
+    return str.slice(0, halfLength - 1) === str.slice(halfLength, str.length - 1);
 
-  return null;
+  } else {
+    return str.slice(0, Math.floor(halfLength) - 1) === str.slice(Math.floor(halfLength) + 1, str.length - 1);
+  }
 
 }
 

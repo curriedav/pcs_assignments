@@ -6,7 +6,7 @@ function isEven (num) {
 
 function isBeep (str) {
 
-	if (str = "beep") {
+	if (str === "beep") {
 		return true;
 	} else {
 		return false;
