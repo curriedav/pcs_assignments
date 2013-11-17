@@ -28,38 +28,59 @@ module.exports.capitalizeEveryOther = function capitalizeEveryOther (str) {
   var re = /[A-Z]|[a-z]/;
   var alternStr = "";
 
+
   for (var i = 0; i <= splitStr.length - 1; i++) {
 
   	if (re.test(splitStr[i])) {
 
-      if (re.test(splitStr[i-1]) && splitStr[i-1] !== undefined) {
+      var prevLetterLoc = 1;
 
-        if (splitStr[i-1] === splitStr[i-1].toUpperCase()) {
-        
+      while (re.test(splitStr[i-prevLetterLoc]) === false && splitStr[i-prevLetterLoc] !== undefined) {
+      
+      prevLetterLoc += 1;
+      
+      };
+
+      if (splitStr[i-prevLetterLoc] !== undefined) {
+
+        if (splitStr[i-prevLetterLoc].toUpperCase() === splitStr[i-prevLetterLoc]) {
+
           alternStr += splitStr[i].toLowerCase();
         } else {
 
-         alternStr += splitStr[i].toUpperCase();
+          alternStr += splitStr[i].toUpperCase();
         }
       } else {
 
         alternStr += splitStr[i].toLowerCase();
       }
   	} else {
-      
+
       alternStr += splitStr[i];
     }
-  };
+  }
 
   return alternStr;
 }
 
 module.exports.capitalizeVowels = function capitalizeVowels (str) {
 
-  // implement me!
+  var splitStr = str.split("");
+  var re = /[A]|[E]|[I]|[O]|[U]|[Y]|[a]|[e]|[i]|[o]|[u]|[y]/;
+  var alternStr = "";
 
-  return null;
+  for (var i = 0; i <= splitStr.length - 1; i++) {
+    
+    if (re.test(splitStr[i])) {
+      alternStr += splitStr[i].toUpperCase();
+    } else {
+      alternStr += splitStr[i];
+    }
+  }
+  
+  return alternStr;
 }
+
 
 module.exports.isPalindrome = function isPalindrome (str) {
 
