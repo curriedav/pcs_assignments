@@ -31,19 +31,19 @@ module.exports.capitalizeEveryOther = function capitalizeEveryOther (str) {
 
   for (var i = 0; i <= splitStr.length - 1; i++) {
 
-  	if (re.test(splitStr[i])) {
+    if (re.test(splitStr[i])) {
 
-      var prevLetterLoc = 1;
-
-      while (re.test(splitStr[i-prevLetterLoc]) === false && splitStr[i-prevLetterLoc] !== undefined) {
+      var prevLetterLoc = 1; 
+      
+      while (!re.test(splitStr[i-prevLetterLoc]) && splitStr[i-prevLetterLoc] !== undefined) {
       
       prevLetterLoc += 1;
       
       };
 
-      if (splitStr[i-prevLetterLoc] !== undefined) {
+      if (alternStr.charAt(i-prevLetterLoc) !== undefined) {
 
-        if (splitStr[i-prevLetterLoc].toUpperCase() === splitStr[i-prevLetterLoc]) {
+        if (alternStr.charAt(i-prevLetterLoc).toUpperCase() === alternStr.charAt(i-prevLetterLoc)) {
 
           alternStr += splitStr[i].toLowerCase();
         } else {
@@ -54,7 +54,7 @@ module.exports.capitalizeEveryOther = function capitalizeEveryOther (str) {
 
         alternStr += splitStr[i].toLowerCase();
       }
-  	} else {
+    } else {
 
       alternStr += splitStr[i];
     }
