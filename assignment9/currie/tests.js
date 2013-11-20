@@ -47,9 +47,9 @@ test('should return true if two if passed in', function (t) {
 });
 
 test('should return a number between 20 and 30', function (t) {
-  var randomNumber = conditionals.randomNumber();
+  var randomTwenties = conditionals.randomTwenties();
 
-  t.equal(randomNumber >= 20 && randomNumber <= 30);
+  t.equal(randomTwenties >= 20 && randomTwenties <= 30, true);
 
   t.end();
 });

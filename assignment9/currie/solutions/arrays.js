@@ -13,7 +13,7 @@ module.exports.insertAt = function(arr, index, item) {
 // 			}	
 // 		}
 // 	}
-// }
+}
 
 module.exports.alphabetSorter = function(a, b) {
   // This is the comparator function that will be passed
