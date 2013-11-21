@@ -2,17 +2,14 @@ module.exports.insertAt = function(arr, index, item) {
 
 // This function doesn't need to return anything, but rather modify
 // the passed array in place.
-// 	if (arr.length > index)	{
-// 		for (var i = 0; i <= arr.length; i++) {
-// 			Things[i]
-// 		}	
-// 	} else {
-// 		for (var i = 0; i <= index; i++) {
-// 			if (i = index) {
-// 				arr[i] = item;
-// 			}	
-// 		}
-// 	}
+
+	if (index < arr.length - 1) { 
+		arr.splice(index, 0, item);
+	} else {
+		arr[index] = item;
+	}
+	
+	
 }
 
 module.exports.alphabetSorter = function(a, b) {
