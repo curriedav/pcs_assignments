@@ -25,5 +25,22 @@ module.exports.alphabetSorter = function(a, b) {
 }
 
 module.exports.itsInThere = function(arr, item) {
+	var existence = false;
+
+	if (typeof item === 'object') {
+		for (var i = arr.length - 1; i >= 0; i--) {
+			if (arr[i].__proto__ == item.__proto__) {
+				existence = true;
+			}
+		};
+	} else {
+		for (var i = arr.length - 1; i >= 0; i--) {
+			if (arr[i] === item) {
+				existence = true;
+			}
+		};
+	}	
+
+	return existence;
   
 }
