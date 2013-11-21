@@ -1,24 +1,31 @@
 module.exports.insertAt = function(arr, index, item) {
 
-// This function doesn't need to return anything, but rather modify
-// the passed array in place.
-
 	if (index < arr.length - 1) { 
 		arr.splice(index, 0, item);
 	} else {
 		arr[index] = item;
-	}
-	
-	
+	}	
 }
 
 module.exports.alphabetSorter = function(a, b) {
-  // This is the comparator function that will be passed
-  // into array.prototype.sort(). It should return a negative number
-  // if a comes before b alphabetically, a positive number if b comes
-  // before a and 0 if there's a tie
 
+	if (typeof a === "string") {
+  		
+  		a = a.toLowerCase();
+  	}
 
+	if (typeof b === "string") {
+  		
+  		b = b.toLowerCase();
+  	}
+
+	if (a !== b) {
+		
+		return a < b ? -1 : 1;
+	} else {
+		
+		return 0;
+	}
 }
 
 module.exports.itsInThere = function(arr, item) {
