@@ -1,0 +1,22 @@
+//Fibonacci Sequence Generator
+
+function fibonacci () {
+	var lastNum = 0;
+	var thisNum = 1;
+
+	return function () {
+		var returnVal = thisNum;
+
+		thisNum = returnVal + lastNum;
+		lastNum = returnVal
+
+		return returnVal;
+	}
+
+}
+
+var fibonacciVar = fibonacci();
+
+for (var i = 100; i >= 0; i--) {
+	console.log(fibonacciVar());
+};
